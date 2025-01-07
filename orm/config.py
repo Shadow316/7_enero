@@ -16,7 +16,7 @@ import os
 #                           "options": "-csearch_path=app"                           
 #                       })
 engine = create_engine(os.getenv("db_uri", "sqlite://base-ejemplo.db"))
-modelos.BaseClass.metadata.create_all()
+modelos.BaseClass.metadata.create_all(engine)
 
 #2. Obtener la clase que nos permite crear objetos tipo session
 SessionClass = sessionmaker(engine) 
